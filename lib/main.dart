@@ -20,8 +20,16 @@ class RecipeBookApp extends StatelessWidget {
 
       title: 'Recipe Book',
 
-      // setting global theme
-      theme: ThemeData(primarySwatch: Colors.orange),
+      //setting global theme
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
+
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.orange,
+          foregroundColor: Colors.white,
+          centerTitle: true,
+        ),
+      ),
 
       // first screen shown when app opens
       home: HomeScreen(),
