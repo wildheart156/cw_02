@@ -25,13 +25,17 @@ class HomeScreen extends StatelessWidget { //Stateless because it only displays 
         itemCount: sampleRecipes.length,
         itemBuilder: (context, index) {
           final recipe = sampleRecipes[index];
+          //using card it will give a listing with a clear design with the padding
+          //to help clearly seperate each recipe from others
           return Card(
             child: ListTile(
+              //loads the widget to display on the left side of the list item to show image from assets
               leading: Image.asset(recipe.imagePath, width: 56, fit: BoxFit.cover),
+              //displaying the recipe name from the recipe object
               title:   Text(recipe.name),
               trailing: const Icon(Icons.chevron_right),
               onTap: () {
-                Navigator.push(
+                Navigator.push( //this adds a new screen to the stack so you can view the details
                   context,
                   MaterialPageRoute(
                     builder: (_) => DetailsScreen(recipe: recipe),
